@@ -1,0 +1,152 @@
+<!-- <div class="">Home is the way</div> -->
+
+<div class="mx-[10vh] mt-[10vh]">
+  <div class="text-2xl text-center font-semibold my-5">
+    Table of customer user data
+  </div>
+
+  <div class="py-4 flex flex-row justify-between">
+    <div class="">
+      <label
+        for="countries"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Choose Gender</label
+      >
+      <select
+        [(ngModel)]="gender"
+        (ngModelChange)="onChangeGender($event)"
+        id="countries"
+        class="w-[30vh] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option selected>Choose a country</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <!-- <option value="FR">F</option>
+      <option value="DE">Germany</option> -->
+      </select>
+    </div>
+
+    <div>
+      <input
+        class="w-[30vh] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        type="text"
+        placeholder="search"
+        [(ngModel)]="searchText"
+      />
+    </div>
+  </div>
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead
+        class="text-xs text-gray-700 uppercase dark:text-gray-400 border-b-4"
+      >
+        <tr>
+          <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+            Cuatomer name
+          </th>
+          <th scope="col" class="px-6 py-3">Date of birth</th>
+          <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+            Account Type
+          </th>
+          <th scope="col" class="px-6 py-3">Account Number</th>
+          <th scope="col" class="px-6 py-3">Account Status</th>
+          <th scope="col" class="px-6 py-3">Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr class="border-b border-gray-200 dark:border-gray-700">
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+          >
+            Faruk Taiwo
+          </th>
+          <td class="px-6 py-4">14/2018</td>
+          <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">Current</td>
+          <td class="px-6 py-4">2020020202</td>
+          <td class="px-6 py-4">Active</td>
+          <td class="px-6 py-4">Male</td>
+        </tr>
+        <hr />
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+          >
+            Faruk Taiwo
+          </th>
+          <td class="px-6 py-4">14/2018</td>
+          <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">Current</td>
+          <td class="px-6 py-4">2020020202</td>
+          <td class="px-6 py-4">Active</td>
+          <td class="px-6 py-4">Male</td>
+        </tr>
+        <hr />
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+          >
+            Faruk Taiwo
+          </th>
+          <td class="px-6 py-4">14/2018</td>
+          <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">Current</td>
+          <td class="px-6 py-4">2020020202</td>
+          <td class="px-6 py-4">Active</td>
+          <td class="px-6 py-4">female</td>
+        </tr>
+        <hr />
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+          >
+            Faruk Taiwo
+          </th>
+          <td class="px-6 py-4">14/2018</td>
+          <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">Current</td>
+          <td class="px-6 py-4">2020020202</td>
+          <td class="px-6 py-4">Active</td>
+          <td class="px-6 py-4">Male</td>
+        </tr> -->
+        <hr />
+        <tr
+          class="border-b border-gray-200 dark:border-gray-700"
+          *ngFor="
+            let customer of customers
+              | paginate : { itemsPerPage: 4, currentPage: p }
+              | search : searchText
+          "
+        >
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+          >
+            {{ customer.customer_name }}
+          </th>
+          <td class="px-6 py-4">{{ customer.date_birth }}</td>
+          <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+            {{ customer.Account_type }}
+          </td>
+          <td class="px-6 py-4">{{ customer.Account_Number }}</td>
+          <td class="px-6 py-4">{{ customer.Account_Status }}</td>
+          <td class="px-6 py-4">{{ customer.Gender }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flex justify-center my-6">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>

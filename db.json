@@ -1,0 +1,96 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "customer_name" : "Samuel odo",
+      "date_birth" : "12-13-23",
+      "Account_type" : "Current",
+      "Account_Number" : "29103828188",
+      "Account_Status": "Active",
+      "Gender": "male"
+    },
+    {
+      "id": 2,
+      "customer_name" : "Frank edward",
+      "date_birth" : "12-13-21",
+      "Account_type" : "Savings",
+      "Account_Number" : "29222218188",
+      "Account_Status": "Active",
+      "Gender":"female"
+    },
+    {
+      "id": 3,
+      "customer_name" : "Heery devis",
+      "date_birth" : "12-05-23",
+      "Account_type" : "Current",
+      "Account_Number" : "29103828188",
+      "Account_Status": "Not active",
+      "Gender":"male"
+
+    },
+    {
+      "id": 4,
+      "customer_name" : "Samuel odo",
+      "date_birth" : "12-13-23",
+      "Account_type" : "Current",
+      "Account_Number" : "29103828188",
+      "Account_Status": "Active",
+      "Gender":"male"
+    },
+    {
+      "id": 5,
+      "customer_name" : "Samuel odo",
+      "date_birth" : "12-13-23",
+      "Account_type" : "Current",
+      "Account_Number" : "29103828188",
+      "Account_Status": "Active",
+      "Gender":"male"
+    },
+    {
+      "id": 6,
+      "customer_name" : "Festus hasaw",
+      "date_birth" : "12-13-23",
+      "Account_type" : "Savings",
+      "Account_Number" : "29103828188",
+      "Account_Status": "Dormant",
+      "Gender":"male"
+    },
+    {
+      "id": 7,
+      "customer_name" : "Samuel odo",
+      "date_birth" : "12-13-23",
+      "Account_type" : "Current",
+      "Account_Number" : "29103828188",
+      "Account_Status": "Dormant",
+      "Gender":"female"
+
+    },
+    {
+      "id": 8,
+      "customer_name" : "Samuel odo",
+      "date_birth" : "12-13-23",
+      "Account_type" : "Current",
+      "Account_Number" : "29103828188",
+      "Account_Status": "Active",
+      "Gender":"female"
+    },
+    {
+      "id": 9,
+      "customer_name" : "Samuel odo",
+      "date_birth" : "12-13-23",
+      "Account_type" : "Current",
+      "Account_Number" : "29103828188",
+      "Account_Status": "Active",
+      "Gender":"female"
+    },
+    {
+      "id": 10,
+      "customer_name" : "Samuel Daniel",
+      "date_birth" : "12-13-23",
+      "Account_type" : "Savings",
+      "Account_Number" : "29103828188",
+      "Account_Status": "Active",
+      "Gender":"female"
+    }
+  ]
+}
